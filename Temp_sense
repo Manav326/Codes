@@ -1,13 +1,13 @@
-import conf
+import conf3
 from boltiot import Sms, Bolt
 import json, time
 
-minimum_limit = 30
-maximum_limit = 60  
+minimum_limit = 300
+maximum_limit = 600 
 
 
-mybolt = Bolt(conf.api_key, conf.device_id)
-sms = Sms(conf.SID, conf.AUTH_TOKEN, conf.TO_NUMBER, conf.FROM_NUMBER)
+mybolt = Bolt(conf3.api_key, conf3.device_id)
+sms = Sms(conf3.SID, conf3.AUTH_TOKEN, conf3.TO_NUMBER, conf3.FROM_NUMBER)
 
 
 while True: 
