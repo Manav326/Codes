@@ -1,0 +1,45 @@
+import conf
+from boltiot import Sms, Bolt
+import json, time
+
+minimum_limit = 30
+maximum_limit = 60  
+
+
+mybolt = Bolt(conf.api_key, conf.device_id)
+sms = Sms(conf.SID, conf.AUTH_TOKEN, conf.TO_NUMBER, conf.FROM_NUMBER)
+
+
+while True: 
+    print ("Reading sensor value")
+    response = mybolt.analogRead('A0') 
+    data = json.loads(response) 
+    print("The temperature of the room is : " + str(data['value']))
+    try: 
+        sensor_value = int(data['value'])
+     temp = (sensor_value*100)/1024 
+        print("The temperature of the room is : " + (temp))
+        if temp > maximum_limit or temp < minimum_limit:
+            print("Making request to Twilio to send a SMS")
+            response = sms.send_sms("Warning!! The  temperature has crossed the threshod.Please turn off!! " +str(sensor_value))
+            print("Response received from Twilio is: " + str(response))
+            print("Status of SMS at Twilio is :" + str(response.status))
+    except Exception as e: 
+    response = mybolt.analogRead('A0') 
+    data = json.loads(response) 
+    print("The temperature of the room is : " + str(data['value']))
+    try: 
+        sensor_value = int(data['value'])
+        temp = (sensor_value*100)/1024 
+        print("The temperature of the room is : " + (temp))
+        if temp > maximum_limit or temp < minimum_limit:
+            print("Making request to Twilio to send a SMS")
+            response = sms.send_sms("Warning!! The  temperature has crossed the threshod.Please turn off!! " +str(sensor_value))
+            print("Response received from Twilio is: " + str(response))
+            print("Status of SMS at Twilio is :" + str(response.status))
+    except Exception as e: 
+        print ("Error occured: Below are the details")
+        print (e)
+    time.sleep(10)
+
+
