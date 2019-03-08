@@ -1,0 +1,17 @@
+SID = "AC796f0701ef488021ec3e89893ffef562"
+AUTH_TOKEN = "080cb446d514be7d2ca999b0618db1b2"
+FROM_NUMBER = "16152248893"
+TO_NUMBER ="+917977105476"
+api_key = "f1ec9e4a-4818-49ef-9a97-4a771d6f22f0"
+device_id ="BOLT434028"
+consumer_key = "JScTkryJkXGjjTZoSE7GGfe8s"
+consumer_secret = "XLROZN3jecTMFDpB7cVtxjLqLS6cZF9hriSlRbFWwWphqJPEBL"
+access_token = "1090613243607826438-sZ6DkPwFmepFWLFlIzVtXECJ8WYNHo"
+access_token_secret = "ZV9zd6mT5Wgy32u9po0YFQi3DnoSo7BuuPFRikvkkt72U"
+MAILGUN_API_KEY = '82cc95861134bbfe063be619499a2200-b9c15f4c-bdc490f6'
+SANDBOX_URL= 'sandbox8fe55b6901f34f73b1ec5b2e31882ef9.mailgun.org'
+SENDER_EMAIL = 'test@sandbox8fe55b6901f34f73b1ec5b2e31882ef9.mailgun.org'
+RECIPIENT_EMAIL = 'ajeetk258@gmail.com'
+FRAME_SIZE = 10
+MUL_FACTOR = 3
+
